@@ -1,4 +1,5 @@
 package vista;
+import vista.previo_test.PanelLogin;
 import java.awt.BorderLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;

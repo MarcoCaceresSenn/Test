@@ -1,4 +1,4 @@
-package vista;
+package vista.previo_test;
 
 import java.awt.Color;
 import java.awt.Container;

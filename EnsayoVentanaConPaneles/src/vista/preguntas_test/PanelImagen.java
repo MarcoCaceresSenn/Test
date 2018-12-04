@@ -1,4 +1,4 @@
-package vista;
+package vista.preguntas_test;
 
 import control.GestorContador;
 import java.awt.BorderLayout;

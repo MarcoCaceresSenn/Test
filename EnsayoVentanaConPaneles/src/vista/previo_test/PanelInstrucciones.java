@@ -1,9 +1,11 @@
-package vista;
+package vista.previo_test;
 
+import vista.preguntas_test.PanelPreguntasTest;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import vista.Ventana;
 
 public class PanelInstrucciones extends JPanel implements ActionListener {
 
