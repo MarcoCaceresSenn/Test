@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/PanelImagen.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/PanelBotones.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/Ventana.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/PanelInstrucciones.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/PanelLogin.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/gestion_datos/CalculoPuntaje.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/vista/PanelPreguntasTest.java</file>
+            <file>file:/C:/Users/maggi/Documents/NetBeansProjects/Test/EnsayoVentanaConPaneles/src/control/GestorContador.java</file>
+        </group>
     </open-files>
 </project-private>

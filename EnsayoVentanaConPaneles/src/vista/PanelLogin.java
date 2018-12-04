@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -25,7 +26,7 @@ public class PanelLogin extends JPanel implements ActionListener, MouseListener 
     private JLabel labelEdad;
     private JLabel condPsico;
     private JTextField campoNombre;
-    private JTextField campoEdad;
+    private JComboBox opcionesEdad;
     private ButtonGroup grupoBtn;
     private JRadioButton condSi;
     private JRadioButton condNo;
@@ -36,16 +37,17 @@ public class PanelLogin extends JPanel implements ActionListener, MouseListener 
 
     private void initComponets() {
         
+        String[] itemsComboBox = {"", "12 años", "13 - 14 años", "15 - 16 años", "17 años", "18 años", "19 años", "20 - 21 años", "22 - 65 años"};
         
         this.imagenDeFondo = new JLabel(new ImageIcon("resources//0.jpg"));
         this.botonSiguiente = new JButton("Siguiente");
         this.labelNombre = new JLabel("Nombre: ");
-        this.labelEdad = new JLabel("Edad: ");
+        this.labelEdad = new JLabel("Rango de Edad: ");
         this.condPsico = new JLabel("Posee alguna condicion psicologica?:");
         this.condSi = new JRadioButton("Si");
         this.condNo = new JRadioButton("No");
         this.campoNombre = new JTextField("Ejm :  Juan", 12);
-        this.campoEdad = new JTextField("Ejm : 21", 12);
+        this.opcionesEdad = new JComboBox(itemsComboBox);
         this.grupoBtn = new ButtonGroup();
         this.grupoBtn.add(this.condSi);
         this.grupoBtn.add(this.condNo);
@@ -57,14 +59,13 @@ public class PanelLogin extends JPanel implements ActionListener, MouseListener 
         this.labelEdad.setBounds(205, 280, 250, 35);
         this.condPsico.setBounds(100, 340, 250, 35);
         this.campoNombre.setBounds(325, 225, 250, 35);
-        this.campoEdad.setBounds(325, 280, 250, 35);
         this.condSi.setBounds(325, 350, 50, 15);
         this.condNo.setBounds(400, 350, 50, 15);
         this.botonSiguiente.setBounds(325, 450, 150, 35);
-
+        this.opcionesEdad.setBounds(325, 280, 250, 35);
         this.imagenDeFondo.setLayout(null);
         this.imagenDeFondo.add(this.botonSiguiente);
-        this.imagenDeFondo.add(this.campoEdad);
+        this.imagenDeFondo.add(this.opcionesEdad);
         this.imagenDeFondo.add(this.campoNombre);
         this.imagenDeFondo.add(this.condNo);
         this.imagenDeFondo.add(this.condPsico);
@@ -74,19 +75,20 @@ public class PanelLogin extends JPanel implements ActionListener, MouseListener 
         this.setPreferredSize(new Dimension(800, 600));
         this.botonSiguiente.addActionListener(this);
         this.campoNombre.addMouseListener(this);
-        this.campoEdad.addMouseListener(this);
         this.add(this.imagenDeFondo);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == this.botonSiguiente){
+        if (e.getSource() == this.botonSiguiente && !this.campoNombre.getText().equals("") && !this.campoNombre.getText().equals("Ejm :  Juan") && this.opcionesEdad.getSelectedIndex() != 0 && (this.condSi.isSelected() || this.condNo.isSelected())){
             Container ventana = this.getParent();
             this.panelIstrucciones = new PanelInstrucciones();
             ventana.remove(this);
             ventana.add(this.panelIstrucciones);
             ventana.validate();
             
+        }else{
+            JOptionPane.showMessageDialog(null, "Rellene todos los campos");
         }
     }
 
@@ -94,8 +96,6 @@ public class PanelLogin extends JPanel implements ActionListener, MouseListener 
     public void mouseClicked(MouseEvent e) {
         if (e.getComponent() == this.campoNombre){
             this.campoNombre.setText("");
-        }else if(e.getComponent() == this.campoEdad){
-            this.campoEdad.setText("");
         }
     }
 

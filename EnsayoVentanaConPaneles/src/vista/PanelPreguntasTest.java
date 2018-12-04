@@ -1,6 +1,7 @@
 package vista;
 
 import control.GestorContador;
+import gestion_datos.CalculoPuntaje;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -42,19 +43,21 @@ public class PanelPreguntasTest extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         if (e.getSource() == this.botonSiguiente) {
             for (int i = 0; i < this.panelBotones.getSeleccionTest().length; i++) {
                 if (this.panelBotones.getSeleccionTest()[i].isSelected()) {
-                    System.out.println("this.contador: " + this.contador);
-                    this.panelImagen.removerTodo();
-                    this.panelImagen.modificarPanel(this.contador);
-                    this.panelBotones.cambiarBotones();
-                    this.panelBotones.removerBotones();
-                    this.contador++;
-                    GestorContador.getInstance().setContador(this.contador);
-                    
-                    
+                    if (GestorContador.getInstance().getContador() != 60) {
+                        this.panelImagen.removerTodo();
+                        this.panelImagen.modificarPanel(GestorContador.getInstance().getContador());
+                        
+                        this.panelBotones.sobreescribirBotones();
+                    } else {
+                        System.out.println("Es 60");
+                        CalculoPuntaje cal = new CalculoPuntaje(this.panelBotones.getRespuestasUsuario());
+                        System.exit(0);
+                    }
+
                 }
             }
         }
