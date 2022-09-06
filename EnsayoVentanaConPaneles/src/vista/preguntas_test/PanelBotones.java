@@ -39,7 +39,7 @@ public class PanelBotones extends JPanel implements ActionListener {
         }
     }
 
-    private void initComponents() {
+    public void initComponents() {
         this.setLayout(new GridLayout(2, 4, 2, 2));
         this.grupoBtnes = new ButtonGroup();
         this.seleccionTest = new JRadioButton[8];
